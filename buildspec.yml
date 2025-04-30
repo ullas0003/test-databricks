@@ -10,8 +10,8 @@ phases:
       - echo "Installation complete" 
   pre_build:
     commands:
-      - export DATABRICKS_TOKEN=<your_token>
-      - export DATABRICKS_HOST=https://<your-databricks-instance>.cloud.databricks.com
+      - export DATABRICKS_TOKEN=dapi4bdea77ba681c262bd74c773dc9d37cb
+      - export DATABRICKS_HOST=https://dbc-283662bd-ebae.cloud.databricks.com
   build:
     commands:
       - databricks bundle validate
