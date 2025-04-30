@@ -1,0 +1,25 @@
+bundle:
+  name: sample-bundle
+
+targets:
+  dev:
+    workspace:
+      host: https://<your-databricks-instance>.cloud.databricks.com
+    mode: development
+    default: true
+
+resources:
+  jobs:
+    sample-job:
+      name: "My Sample Job"
+      tasks:
+        - task_key: "hello"
+          notebook_task:
+            notebook_path: "/Workspace/Shared/hello_world"
+          job_cluster_key: "default"
+      job_clusters:
+        - job_cluster_key: "default"
+          new_cluster:
+            num_workers: 1
+            spark_version: "13.3.x-scala2.12"
+            node_type_id: "i3.xlarge"

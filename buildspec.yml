@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.10
+    commands:
+      - pip install databricks-cli
+      - curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
+      - echo "Installation complete" 
+  pre_build:
+    commands:
+      - export DATABRICKS_TOKEN=<your_token>
+      - export DATABRICKS_HOST=https://<your-databricks-instance>.cloud.databricks.com
+  build:
+    commands:
+      - databricks bundle validate
+      - databricks bundle deploy --target=dev
