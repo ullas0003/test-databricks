@@ -1,10 +1,10 @@
 bundle:
-  name: sample-bundle
+  name: test-databricks
 
 targets:
   dev:
     workspace:
-      host: https://<your-databricks-instance>.cloud.databricks.com
+      host: https://dbc-283662bd-ebae.cloud.databricks.com
     mode: development
     default: true
 
@@ -13,9 +13,9 @@ resources:
     sample-job:
       name: "My Sample Job"
       tasks:
-        - task_key: "hello"
+        - task_key: "test"
           notebook_task:
-            notebook_path: "/Workspace/Shared/hello_world"
+            notebook_path: "/Workspace/Shared/test"
           job_cluster_key: "default"
       job_clusters:
         - job_cluster_key: "default"
